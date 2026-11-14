@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Student Attendance System</h1>
+            <p>Manage students and track attendance easily</p>
+        </header>
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Students</h3>
+                <h2 id="totalStudents">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Present</h3>
+                <h2 id="presentCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Absent</h3>
+                <h2 id="absentCount">0</h2>
+            </div>
+        </section>
+
+        <!-- Add Student -->
+        <section class="section">
+            <h2>Add Student</h2>
+
+            <div class="form">
+                <input type="text" id="studentName"
+                    placeholder="Enter student name">
+
+                <input type="text" id="studentRoll"
+                    placeholder="Enter roll number">
+
+                <button onclick="addStudent()">Add Student</button>
+            </div>
+        </section>
+
+        <!-- Attendance Date -->
+        <section class="section">
+            <h2>Select Attendance Date</h2>
+            <input type="date" id="attendanceDate"
+                onchange="displayStudents()">
+        </section>
+
+        <!-- Student List -->
+        <section class="section">
+            <h2>Student List</h2>
+
+            <input type="text" id="searchInput"
+                placeholder="Search by name or roll number..."
+                oninput="displayStudents()">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll Number</th>
+                            <th>Student Name</th>
+                            <th>Attendance</th>
+                            <th>Percentage</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Attendance History -->
+        <section class="section history-section">
+            <h2>Attendance History</h2>
+            <p id="historyMessage">Select a student to view attendance history.</p>
+
+            <div id="historyContent"></div>
+        </section>
+
+        <footer>
+            <p>Student Attendance Management System</p>
+            <p>Developed using HTML, CSS and JavaScript</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
